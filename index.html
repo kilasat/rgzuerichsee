@@ -18,19 +18,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --navy: #103052;
-            --blue: #1f6fb2;
-            --sky: #57a6dd;
-            --coral: #ff6a55;
-            --sand: #f8f5f0;
-            --ink: #1a2430;
-            --muted: #66788a;
+            --navy: #1c2e45;
+            --blue: #2f5f8f;
+            --sky: #7ea6c8;
+            --coral: #e36a4f;
+            --sand: #f7f8fa;
+            --ink: #1f2937;
+            --muted: #5f6b7a;
             --white: #ffffff;
-            --line: #dce5ef;
+            --line: #e4e8ee;
             --gold: #efb400;
             --silver: #9da8b5;
             --bronze: #b77945;
-            --shadow: 0 14px 40px rgba(16, 48, 82, 0.14);
+            --shadow: 0 4px 14px rgba(28, 46, 69, 0.08);
         }
 
         * {
@@ -73,12 +73,11 @@
         }
 
         .topbar {
-            position: sticky;
+            position: static;
             top: 0;
             z-index: 30;
-            background: rgba(16, 48, 82, 0.92);
-            backdrop-filter: blur(8px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+            background: var(--white);
+            border-bottom: 1px solid var(--line);
         }
 
         .topbar-inner {
@@ -93,7 +92,7 @@
             display: flex;
             align-items: center;
             gap: 0.6rem;
-            color: var(--white);
+            color: var(--navy);
             text-decoration: none;
             font-weight: 700;
             letter-spacing: 0.3px;
@@ -124,7 +123,7 @@
             justify-content: center;
             gap: 0.4rem;
             text-decoration: none;
-            border-radius: 999px;
+            border-radius: 10px;
             font-weight: 700;
             padding: 0.78rem 1.2rem;
             transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, color 0.2s ease;
@@ -136,22 +135,22 @@
         .btn-primary {
             background: var(--coral);
             color: var(--white);
-            box-shadow: 0 8px 20px rgba(255, 106, 85, 0.34);
+            box-shadow: none;
         }
 
         .btn-primary:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 11px 24px rgba(255, 106, 85, 0.4);
+            transform: none;
+            box-shadow: none;
         }
 
         .btn-ghost {
-            background: transparent;
-            color: var(--white);
-            border-color: rgba(255, 255, 255, 0.42);
+            background: var(--white);
+            color: var(--navy);
+            border-color: var(--line);
         }
 
         .btn-ghost:hover {
-            background: rgba(255, 255, 255, 0.1);
+            background: #f5f7fa;
         }
 
         a:focus-visible,
@@ -165,12 +164,9 @@
 
         .hero {
             position: relative;
-            background:
-                radial-gradient(1200px 450px at 85% 12%, rgba(87, 166, 221, 0.34), transparent 60%),
-                radial-gradient(700px 300px at 15% 80%, rgba(255, 106, 85, 0.22), transparent 60%),
-                linear-gradient(145deg, #0f2a45 0%, #174f81 66%, #1f6fb2 100%);
-            color: var(--white);
-            padding: 5.2rem 0 4.3rem;
+            background: var(--sand);
+            color: var(--ink);
+            padding: 4rem 0 3rem;
         }
 
         .hero-grid {
@@ -185,12 +181,13 @@
             align-items: center;
             gap: 0.4rem;
             border-radius: 999px;
-            border: 1px solid rgba(255, 255, 255, 0.36);
+            border: 1px solid var(--line);
             padding: 0.3rem 0.85rem;
             font-size: 0.86rem;
             letter-spacing: 0.4px;
             margin-bottom: 1.2rem;
-            background: rgba(255, 255, 255, 0.08);
+            background: var(--white);
+            color: var(--blue);
         }
 
         h1 {
@@ -236,11 +233,10 @@
         }
 
         .hero-card {
-            background: rgba(255, 255, 255, 0.13);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 18px;
+            background: var(--white);
+            border: 1px solid var(--line);
+            border-radius: 12px;
             padding: 1.4rem;
-            backdrop-filter: blur(6px);
             box-shadow: var(--shadow);
         }
 
@@ -257,13 +253,13 @@
         }
 
         .hero-card a {
-            color: var(--white);
+            color: var(--blue);
             text-underline-offset: 3px;
             font-weight: 700;
         }
 
         section {
-            padding: 4.8rem 0;
+            padding: 3.5rem 0;
         }
 
         .section-title {
@@ -283,7 +279,7 @@
         }
 
         .stats {
-            background: var(--sand);
+            background: var(--white);
         }
 
         .stats-grid {
@@ -295,9 +291,9 @@
         .stat {
             background: var(--white);
             border: 1px solid var(--line);
-            border-radius: 14px;
+            border-radius: 10px;
             padding: 1.25rem;
-            box-shadow: 0 8px 24px rgba(15, 42, 69, 0.07);
+            box-shadow: none;
         }
 
         .stat strong {
@@ -318,9 +314,9 @@
 
         .value-card {
             border: 1px solid var(--line);
-            border-radius: 14px;
+            border-radius: 10px;
             padding: 1.3rem;
-            box-shadow: 0 10px 26px rgba(16, 48, 82, 0.06);
+            box-shadow: none;
             background: var(--white);
         }
 
@@ -336,7 +332,7 @@
         }
 
         .packages {
-            background: linear-gradient(180deg, #f1f7fc 0%, #ffffff 100%);
+            background: var(--sand);
         }
 
         .packages-grid {
@@ -348,9 +344,9 @@
         .package {
             background: var(--white);
             border: 1px solid var(--line);
-            border-radius: 18px;
+            border-radius: 10px;
             padding: 1.35rem;
-            box-shadow: var(--shadow);
+            box-shadow: none;
             display: flex;
             flex-direction: column;
             min-height: 100%;
@@ -448,10 +444,10 @@
 
         .dna-card {
             border: 1px solid var(--line);
-            border-radius: 14px;
+            border-radius: 10px;
             padding: 1rem;
-            background: #fbfdff;
-            box-shadow: 0 10px 22px rgba(16, 48, 82, 0.06);
+            background: var(--white);
+            box-shadow: none;
         }
 
         .dna-lead {
@@ -500,8 +496,7 @@
             margin-top: 1.2rem;
             display: grid;
             gap: 0.8rem;
-            grid-template-columns: 1.5fr 1fr 1fr;
-            grid-auto-rows: 220px;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
         }
 
         .image-grid figure {
@@ -509,17 +504,16 @@
             overflow: hidden;
             background: #e8eef5;
             border: 1px solid var(--line);
+            display: flex;
+            flex-direction: column;
         }
 
         .image-grid img {
             width: 100%;
-            height: 100%;
+            aspect-ratio: 4 / 3;
+            height: auto;
             object-fit: cover;
             display: block;
-        }
-
-        .image-grid .featured {
-            grid-row: span 2;
         }
 
         .image-grid figcaption {
@@ -538,9 +532,9 @@
         .proof-card {
             background: var(--white);
             border: 1px solid var(--line);
-            border-radius: 14px;
+            border-radius: 10px;
             padding: 1.1rem;
-            box-shadow: 0 8px 22px rgba(16, 48, 82, 0.06);
+            box-shadow: none;
         }
 
         .proof-card b {
@@ -611,10 +605,10 @@
 
         .step {
             border: 1px solid var(--line);
-            border-radius: 14px;
+            border-radius: 10px;
             padding: 1.2rem;
             background: var(--white);
-            box-shadow: 0 10px 24px rgba(16, 48, 82, 0.06);
+            box-shadow: none;
         }
 
         .step b {
@@ -641,10 +635,10 @@
         }
 
         .quote {
-            background: linear-gradient(130deg, #12385f, #205f96);
-            color: var(--white);
+            background: #edf3f8;
+            color: var(--ink);
             text-align: center;
-            padding: 3.3rem 0;
+            padding: 2.2rem 0;
         }
 
         .quote blockquote {
@@ -672,7 +666,7 @@
 
         details {
             border: 1px solid var(--line);
-            border-radius: 12px;
+            border-radius: 10px;
             background: var(--white);
             padding: 0.95rem 1rem;
         }
@@ -691,8 +685,9 @@
 
         .contact {
             position: relative;
-            background: linear-gradient(145deg, #0f2a45 0%, #174f81 70%, #1f6fb2 100%);
-            color: var(--white);
+            background: var(--white);
+            color: var(--ink);
+            border-top: 1px solid var(--line);
         }
 
         .contact-wrap {
@@ -703,9 +698,9 @@
         }
 
         .contact-card {
-            background: rgba(255, 255, 255, 0.12);
-            border: 1px solid rgba(255, 255, 255, 0.22);
-            border-radius: 16px;
+            background: #f7f9fc;
+            border: 1px solid var(--line);
+            border-radius: 10px;
             padding: 1.3rem;
         }
 
@@ -721,7 +716,7 @@
         }
 
         .contact-list a {
-            color: var(--white);
+            color: var(--blue);
             text-decoration: underline;
             text-underline-offset: 3px;
         }
@@ -746,16 +741,16 @@
         .lead-form label {
             font-size: 0.86rem;
             font-weight: 700;
-            color: rgba(255, 255, 255, 0.9);
+            color: var(--ink);
         }
 
         .lead-form input,
         .lead-form textarea {
             width: 100%;
-            border: 1px solid rgba(255, 255, 255, 0.35);
+            border: 1px solid var(--line);
             border-radius: 10px;
-            background: rgba(255, 255, 255, 0.08);
-            color: var(--white);
+            background: var(--white);
+            color: var(--ink);
             padding: 0.68rem 0.78rem;
             font: inherit;
         }
@@ -790,10 +785,10 @@
         }
 
         .site-footer {
-            background: #0d2742;
-            color: rgba(255, 255, 255, 0.9);
+            background: #1f2937;
+            color: #f1f5f9;
             padding: 1.1rem 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.12);
+            border-top: 1px solid #334155;
         }
 
         .site-footer .container {
@@ -816,9 +811,9 @@
         }
 
         .reveal {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.55s ease, transform 0.55s ease;
+            opacity: 1;
+            transform: none;
+            transition: none;
         }
 
         .reveal.visible {
@@ -1174,8 +1169,8 @@
         <section id="contact" class="contact">
             <div class="container contact-wrap">
                 <div>
-                    <h2 class="section-title" style="color: #ffffff;">Kontakt & Nächste Schritte</h2>
-                    <p class="section-sub" style="color: rgba(255,255,255,0.85);">Anfrage senden und innerhalb von 2 Werktagen Rückmeldung erhalten.</p>
+                    <h2 class="section-title">Kontakt & Nächste Schritte</h2>
+                    <p class="section-sub">Anfrage senden und innerhalb von 2 Werktagen Rückmeldung erhalten.</p>
                     <div class="contact-list">
                         <div>
                             <span>E-Mail</span>
@@ -1246,24 +1241,8 @@
         }
     </script>
     <script>
-        const revealElements = document.querySelectorAll('.reveal');
         const form = document.getElementById('sponsor-form');
         const formStatus = document.getElementById('form-status');
-
-        if ('IntersectionObserver' in window) {
-            const revealObserver = new IntersectionObserver((entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        revealObserver.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-
-            revealElements.forEach((el) => revealObserver.observe(el));
-        } else {
-            revealElements.forEach((el) => el.classList.add('visible'));
-        }
 
         if (form) {
             form.addEventListener('submit', (event) => {
