@@ -1,1 +1,688 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sponsoring-Partnerschaft 2026 | RG Zürichsee</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #2E86DE;
+            --deep-blue: #1B4D7E;
+            --accent-pink: #FF6B9D;
+            --gold: #FFD700;
+            --silver: #C0C0C0;
+            --bronze: #CD7F32;
+            --white: #FFFFFF;
+            --off-white: #F8F9FA;
+            --dark: #1A1A1A;
+            --gray: #6C757D;
+        }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            color: var(--dark);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--deep-blue) 0%, var(--primary-blue) 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(255, 107, 157, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 2rem;
+            max-width: 1200px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .logo {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 2rem;
+            background: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .hero h1 {
+            font-family: 'Bebas Neue', cursive;
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            color: var(--white);
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+            line-height: 1.1;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .hero h2 {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            color: var(--white);
+            font-weight: 400;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .hero-tagline {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            color: var(--white);
+            margin-bottom: 3rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .cta-container {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease-out 0.8s both;
+        }
+
+        .btn {
+            padding: 1.2rem 2.5rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-primary {
+            background: var(--accent-pink);
+            color: var(--white);
+            box-shadow: 0 5px 25px rgba(255, 107, 157, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 35px rgba(255, 107, 157, 0.6);
+        }
+
+        .btn-secondary {
+            background: var(--white);
+            color: var(--primary-blue);
+            box-shadow: 0 5px 25px rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 35px rgba(255, 255, 255, 0.5);
+        }
+
+        .section {
+            padding: 5rem 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Bebas Neue', cursive;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--deep-blue);
+            letter-spacing: 2px;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .benefit-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border-top: 5px solid var(--primary-blue);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+        }
+
+        .benefit-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--accent-pink));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+
+        .benefit-card h3 {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 1.8rem;
+            color: var(--deep-blue);
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+        }
+
+        .benefit-card p {
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        .packages-section {
+            background: linear-gradient(to bottom, var(--off-white), var(--white));
+        }
+
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .package-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .package-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+        }
+
+        .package-card.gold::before {
+            background: linear-gradient(90deg, var(--gold), #FFA500);
+        }
+
+        .package-card.silver::before {
+            background: linear-gradient(90deg, var(--silver), #A9A9A9);
+        }
+
+        .package-card.bronze::before {
+            background: linear-gradient(90deg, var(--bronze), #8B4513);
+        }
+
+        .package-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .package-card.featured {
+            border: 3px solid var(--gold);
+            transform: scale(1.05);
+        }
+
+        .package-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--gold);
+            color: var(--dark);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .package-name {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 2rem;
+            color: var(--deep-blue);
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+        }
+
+        .package-price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 2rem;
+        }
+
+        .package-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .package-features li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid var(--off-white);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .package-features li::before {
+            content: '✓';
+            color: var(--primary-blue);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .why-section {
+            background: linear-gradient(135deg, var(--deep-blue) 0%, var(--primary-blue) 100%);
+            color: var(--white);
+        }
+
+        .why-section .section-title {
+            color: var(--white);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .stat-number {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 3.5rem;
+            color: var(--accent-pink);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .contact-section {
+            background: var(--off-white);
+            text-align: center;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--accent-pink));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--white);
+        }
+
+        .contact-label {
+            font-weight: 700;
+            color: var(--deep-blue);
+        }
+
+        .contact-value {
+            color: var(--gray);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(-10px); }
+        }
+
+        .scroll-indicator::after {
+            content: '↓';
+            font-size: 2rem;
+            color: var(--white);
+            opacity: 0.7;
+        }
+
+        @media (max-width: 768px) {
+            .packages-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .package-card.featured {
+                transform: scale(1);
+            }
+            
+            .section {
+                padding: 3rem 1.5rem;
+            }
+        }
+
+        .quote-section {
+            background: var(--accent-pink);
+            color: var(--white);
+            padding: 4rem 2rem;
+            text-align: center;
+            font-style: italic;
+            font-size: 1.5rem;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        .quote-author {
+            margin-top: 1.5rem;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="logo">
+                <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                    <circle cx="40" cy="40" r="35" stroke="#2E86DE" stroke-width="3"/>
+                    <path d="M40 20 L50 35 L65 35 L53 45 L58 60 L40 50 L22 60 L27 45 L15 35 L30 35 Z" fill="#FF6B9D"/>
+                </svg>
+            </div>
+            <h1>Werden Sie Partner der Champions von morgen</h1>
+            <h2>RG Zürichsee – Exzellenz in der Schweizer Rhythmischen Gymnastik</h2>
+            <p class="hero-tagline">Unterstützen Sie die nächste Generation talentierter Sportlerinnen auf ihrem Weg zu Elite-Wettkämpfen in Europa</p>
+            <div class="cta-container">
+                <a href="#packages" class="btn btn-primary">Sponsoring-Pakete ansehen</a>
+                <a href="#contact" class="btn btn-secondary">Kontakt aufnehmen</a>
+            </div>
+        </div>
+        <div class="scroll-indicator"></div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">So macht Ihre Unterstützung den Unterschied</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">👁️</div>
+                    <h3>Sichtbarkeit Ihrer Marke</h3>
+                    <p>Wir teilen aktiv die Reise unserer Athletinnen über Social Media und Vereinskommunikation und präsentieren Partner auf allen unseren Kanälen sowie bei wichtigen Vereinsmomenten wie Meisterschaften und Turnieren.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🌱</div>
+                    <h3>Investition in die Zukunft</h3>
+                    <p>Ihr Unternehmen wird zum stolzen Unterstützer aussergewöhnlich engagierter, mutiger und talentierter Kinder. Diese Unterstützung verstehen Menschen sofort: Engagement, Ausdauer, Vertrauen und gesunder Ehrgeiz.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">⭐</div>
+                    <h3>Erleben Sie die Energie</h3>
+                    <p>Kommen Sie dem Sport näher durch Trainingsbesuche, Einladungen zu Turnieren und Events sowie VIP-Zugangsmöglichkeiten. Treffen Sie die Athletinnen und Trainerinnen und erleben Sie die Energie hinter den Ergebnissen.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section class="section packages-section" id="packages">
+        <div class="container">
+            <h2 class="section-title">Sponsoring-Pakete 2026</h2>
+            <div class="packages-grid">
+                <div class="package-card gold featured">
+                    <div class="package-badge">Empfohlen</div>
+                    <h3 class="package-name">Gold</h3>
+                    <div class="package-price">CHF 5'000</div>
+                    <ul class="package-features">
+                        <li>Marke sichtbar auf Social Media, Website und in gedruckter Presse</li>
+                        <li>Logo auf Trainingskleidung</li>
+                        <li>Banner bei Vereinsturnieren</li>
+                        <li>Videos und Bilder von jungen Athletinnen</li>
+                        <li>Geschichten über talentierte Nachwuchssportlerinnen</li>
+                        <li>Teilnahme am Vereinstraining</li>
+                        <li>Firmen-PR-Event – Aufführung</li>
+                        <li>VIP-Karten für Vereinsturniere</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary" style="width: 100%;">Jetzt anfragen</a>
+                </div>
+                <div class="package-card silver">
+                    <h3 class="package-name">Silber</h3>
+                    <div class="package-price">CHF 3'000</div>
+                    <ul class="package-features">
+                        <li>Marke sichtbar auf Social Media, Website und in gedruckter Presse</li>
+                        <li>Logo auf Trainingskleidung</li>
+                        <li>Banner bei Vereinsturnieren</li>
+                        <li>Videos und Bilder von jungen Athletinnen</li>
+                        <li>Geschichten über talentierte Nachwuchssportlerinnen</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-secondary" style="width: 100%;">Jetzt anfragen</a>
+                </div>
+                <div class="package-card bronze">
+                    <h3 class="package-name">Bronze</h3>
+                    <div class="package-price">CHF 1'000</div>
+                    <ul class="package-features">
+                        <li>Marke sichtbar auf Social Media, Website und in gedruckter Presse</li>
+                        <li>Logo auf Trainingskleidung</li>
+                        <li>Banner bei Vereinsturnieren</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-secondary" style="width: 100%;">Jetzt anfragen</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="quote-section">
+        <div class="container">
+            "Wir sind stolz darauf, sowohl unsere Sponsoren als auch RG Zürichsee auf unserer Reise zu Elite-Wettkämpfen in Europa zu vertreten"
+            <div class="quote-author">— RG Zürichsee Team</div>
+        </div>
+    </section>
+
+    <!-- Why Section -->
+    <section class="section why-section">
+        <div class="container">
+            <h2 class="section-title">Warum wir Ihre Unterstützung brauchen</h2>
+            <p style="text-align: center; font-size: 1.2rem; margin-bottom: 3rem; opacity: 0.95;">Rhythmische Gymnastik auf Wettkampfniveau erfordert erhebliche Investitionen</p>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">70</div>
+                    <div class="stat-label">Leistungsstarke Gymnastinnen trainieren bis zu 25 Stunden pro Woche</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">∞</div>
+                    <div class="stat-label">Leidenschaft & Engagement unserer Athletinnen</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Ihrer Unterstützung fliesst direkt in die Entwicklung junger Talente</div>
+                </div>
+            </div>
+            <div style="margin-top: 3rem; padding: 2rem; background: rgba(255,255,255,0.1); border-radius: 15px; backdrop-filter: blur(10px);">
+                <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Jährliche Kosten umfassen:</h3>
+                <p style="line-height: 1.8; opacity: 0.95;">Professionelles Coaching • Choreografie • Wettkampfgebühren • Reisen • Trikots • Trainingsgeräte • Musik und Trainingsinfrastruktur</p>
+                <p style="margin-top: 1.5rem; font-weight: 700; font-size: 1.1rem;">Die meisten dieser Kosten werden von Familien getragen. Sponsoring ermöglicht es den Gymnastinnen, sich voll auf Training und Leistung zu konzentrieren, hält Möglichkeiten für talentierte Kinder offen und stellt sicher, dass dieser Sport zugänglich bleibt.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Über RG Zürichsee</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🏆</div>
+                    <h3>Führender Schweizer Verein</h3>
+                    <p>RG Zürichsee ist einer der führenden unabhängigen Rhythmische Gymnastik-Vereine der Schweiz. Wir entwickeln leistungsstarke junge Athletinnen durch einen strukturierten Weg, der Disziplin, Kunstfertigkeit und Ehrgeiz verbindet.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">📊</div>
+                    <h3>Nachgewiesene Erfolge</h3>
+                    <p>70 leistungsstarke Gymnastinnen trainieren bis zu 25 Stunden pro Woche • Konstante Podiumsplatzierungen bei Individual- und Gruppenauftritten, auch auf nationaler Ebene • Meisterkurse geleitet von Olympia- und Weltmeisterinnen zur Inspiration und Hebung der Standards</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎯</div>
+                    <h3>Klare Vision</h3>
+                    <p>Unser Ziel ist es, junge Talente für Elite-Wettkämpfe in Europa zu entwickeln und die Sportart in der Schweiz zugänglich und inspirierend zu halten.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact-section" id="contact">
+        <div class="container">
+            <h2 class="section-title">Kontakt & Nächste Schritte</h2>
+            <p style="text-align: center; font-size: 1.2rem; margin-bottom: 2rem; color: var(--gray);">Lassen Sie uns gemeinsam die nächste Generation von Champions unterstützen</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <div class="contact-label">E-Mail</div>
+                    <div class="contact-value">partnerships@rg-zuerichsee.com</div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <div class="contact-label">Telefon</div>
+                    <div class="contact-value">+41 XXXX</div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">🌐</div>
+                    <div class="contact-label">Website</div>
+                    <div class="contact-value">www.rg-zuerichsee.com</div>
+                </div>
+            </div>
+            <div style="margin-top: 3rem;">
+                <a href="mailto:partnerships@rg-zuerichsee.com" class="btn btn-primary">Partnership-Anfrage senden</a>
+            </div>
+            <p style="margin-top: 2rem; color: var(--gray); font-size: 0.95rem;">Partnership Proposal 2026 • Saison 2026</p>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.benefit-card, .package-card, .stat-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
